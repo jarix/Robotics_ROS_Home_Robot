@@ -1,0 +1,8 @@
+.catkin_workspace
+build/
+devel/
+src/slam_gmapping/
+src/turtlebot/
+src/turtlebot_interactions/
+src/turtlebot_simulator/
+write-up.txt
