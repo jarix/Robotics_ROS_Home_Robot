@@ -48,6 +48,7 @@ int main( int argc, char** argv )
   ros::Subscriber odometry_sub = n.subscribe("/odom", 100, callback_odometry);
 
 #if 1
+
   // Set our initial shape type to be a cube
   uint32_t shape = visualization_msgs::Marker::CUBE;
 
@@ -74,9 +75,9 @@ int main( int argc, char** argv )
   marker.pose.orientation.w = 1.0;
 
   // Set the scale of the object
-  marker.scale.x = 0.2;
-  marker.scale.y = 0.2;
-  marker.scale.z = 0.4;
+  marker.scale.x = 0.3;
+  marker.scale.y = 0.3;
+  marker.scale.z = 0.5;
 
   // Set the color -- be sure to set alpha to something non-zero!
   marker.color.r = 1.0f;
