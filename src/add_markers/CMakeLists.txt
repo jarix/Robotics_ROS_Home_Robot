@@ -133,6 +133,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/add_markers_node.cpp)
+add_executable(add_markers_without_odom src/add_markers_without_odom.cpp)
 add_executable(add_markers src/add_markers.cpp)
 
 ## Rename C++ executable without prefix
@@ -144,12 +145,16 @@ add_executable(add_markers src/add_markers.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(add_markers_without_odom ${add_markers_without_odom_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(add_markers ${add_markers_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+target_link_libraries(add_markers_without_odom
+  ${catkin_LIBRARIES}
+)
 target_link_libraries(add_markers
   ${catkin_LIBRARIES}
 )
